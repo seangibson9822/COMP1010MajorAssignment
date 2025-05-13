@@ -7,6 +7,7 @@ public class Character {
     private int defense;
     private int speed;
 
+    // Constructor to initialise character stats
     public Character(String name) {
         this.name = name;
         Random rand = new Random();
@@ -16,6 +17,7 @@ public class Character {
         this.speed = rand.nextInt(11) + 5;     // Speed between 5–15
     }
 
+    // getters
     public String getName() {
         return name;
     }
@@ -35,22 +37,26 @@ public class Character {
     public int getSpeed() {
         return speed;
     }
-
+    
+    // check if character is alive
     public boolean isAlive() {
         return hp > 0;
     }
 
+    //Apply damage to characters HP, considering defense
     public void takeDamage(int damage) {
         int actualDamage = Math.max(0, damage - defense);
         hp -= actualDamage;
         System.out.println(name + " takes " + actualDamage + " damage (HP: " + hp + ")");
     }
 
+    // Attack another character, cause damage based on strength
     public void attack(Character target) {
         System.out.println(name + " attacks " + target.getName());
         target.takeDamage(this.strength);
     }
 
+    //Display character stats
     @Override
     public String toString() {
         return name + " (HP: " + hp + ", ATK: " + strength + ", DEF: " + defense + ", SPD: " + speed + ")";

@@ -2,11 +2,13 @@ public class Battle {
     private Team team1;
     private Team team2;
 
+    //constructor for battle
     public Battle(Team team1, Team team2) {
         this.team1 = team1;
         this.team2 = team2;
     }
 
+    //Start battle and run until one team is defeated
     public void startBattle() {
         System.out.println("Battle begins between " + team1.getTeamName() + " and " + team2.getTeamName() + "!");
         battleRound(); // Start the recursive combat loop
@@ -21,7 +23,7 @@ public class Battle {
         }
     }
 
-    // ✅ Recursive method for battle rounds
+    // Recursive method for battle rounds
     private void battleRound() {
         if (!team1.hasAliveMembers() || !team2.hasAliveMembers()) {
             return; // Base case: end recursion when one team is defeated

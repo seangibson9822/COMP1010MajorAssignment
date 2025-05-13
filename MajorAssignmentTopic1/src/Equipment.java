@@ -1,8 +1,9 @@
 public class Equipment {
-    private String name;
-    private int attackBoost;
-    private int defenseBoost;
+    private String name;        //equiptment name
+    private int attackBoost;    //boost attack strength
+    private int defenseBoost;   //boost defence
 
+    //Equipment constructor
     public Equipment(String name, int attackBoost, int defenseBoost) {
         this.name = name;
         this.attackBoost = attackBoost;
